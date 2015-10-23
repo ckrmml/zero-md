@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="">
 <head>
-  <!-- Stupid simple project-page boilerplate -->
   <meta charset="utf-8">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="generator" content="<zero-md>">
-  <meta name="description" content="A Polymer 1.1+ web component to load and display an external MD file.">
-  <meta name="keywords" content="polymer web-components markdown marked prism marked-element prism-element ajax">
-  <title>&lt;zero-md&gt; | Ridiculously simple markdown displayer</title>
+  <meta name="description" content="Ridiculously simple markdown displayer. A Polymer 1.1+ web component to load and display an external MD file. Instantly create beautiful HTML pages from Markdown.">
+  <meta name="keywords" content="polymer web-components markdown HTML converter marked prismjs marked-element prism-element ajax">
+  <title>&lt;zero-md&gt; Instantly publish HTML from Markdown</title>
 
   <!-- The SeriouslyBoring stuff -->
   <meta name="theme-color" content="#304FFE">
@@ -23,89 +22,23 @@
   <link rel="apple-touch-icon" href="images/zdx_144x144.png">
   <meta name="msapplication-TileImage" content="images/zdx_144x144.png">
 
-  <!-- Let the fun begin -->
-  <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
-  <!--<script>window.Polymer=window.Polymer||{};window.Polymer.dom='shadow';</script>-->
-
-  <link rel="import" href="bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html">
-  <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
-
-  <link rel="import" href="bower_components/zero-md/markdown-themes/default.html">
-  <link rel="import" href="bower_components/zero-md/highlight-themes/default.html">
-  <link rel="import" href="bower_components/zero-md/zero-md.html">
-
+  <!-- Load components -->
+  <script src="https://cdn.rawgit.com/webcomponents/webcomponentsjs/v0.7.15/webcomponents-lite.min.js"></script>
+  <link rel="import" href="https://cdn.rawgit.com/zerodevx/zero-md/v0.2.0/build/zero-md.html">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/zerodevx/zero-md/v0.2.0/markdown-themes/default.css">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/zerodevx/zero-md/v0.2.0/highlight-themes/default.css">
 </head>
 
 <body unresolved>
-  <style is="custom-style">
-    html, body {
-      background-color: #f1f1f1;
-      color: #424242;
-      font-family: 'Open Sans', sans-serif;
-    }
-    paper-scroll-header-panel {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      --paper-scroll-header-panel-full-header: {
-        background:
-          radial-gradient(circle at 100% 50%, transparent 20%, rgba(255,255,255,.3) 21%, rgba(255,255,255,.3) 34%, transparent 35%, transparent),
-          radial-gradient(circle at 0% 50%, transparent 20%, rgba(255,255,255,.3) 21%, rgba(255,255,255,.3) 34%, transparent 35%, transparent) 0 -50px;
-        background-color: steelblue;
-        background-size:75px 100px;
-      };
-      --paper-scroll-header-panel-condensed-header: {
-        background-color: #424242;
-      };
-    }
-    .content {
-      min-width: 200px;
-      max-width: 790px;
-      margin: 0 auto;
-      padding: 24px;
-    }
-    paper-toolbar {
-      background-color: transparent;
-    }
-    .bottom {
-      text-align: center;
-      font-size: 28px;
-      color: #fff;
-    }
-    .btn {
-      text-decoration: none;
-      color: #fff;
-    }
-    .btn:hover, .btn:active {
-      color: skyblue;
-    }
+  <style>
+    .header { background-color: #424242; color: #FFF; font-family: sans-serif; font-size: 20px; text-align: center; position: fixed; width: 100%; height: 42px; line-height: 42px; top: 0; left: 0; }
+    .md-html { min-width: 200px; max-width: 790px; margin: 56px auto 0 auto; padding: 20px; }
   </style>
-
-  <paper-scroll-header-panel id="header" condenses>
-    <paper-toolbar class="tall">
-      <a class="btn" href="#">zerodevx</a>
-      <div class="flex"></div>
-      <a class="btn" href="https://github.com/zerodevx/zero-md">github</a>
-      <div class="bottom flex">&lt;zero-md&gt;</div>
-    </paper-toolbar>
-
-    <div class="content">
-      <zero-md file="https://raw.githubusercontent.com/zerodevx/zero-md/master/README.md"></zero-md>
-    </div>
-  </paper-scroll-header-panel>
+  <div class="header">&lt;zero-md&gt; Instantly publish HTML from Markdown</div>
+  <a href="https://github.com/zerodevx/zero-md"><img style="position: fixed; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
+  <zero-md file="https://raw.githubusercontent.com/zerodevx/zero-md/master/README.md"><div class="md-html"></div></zero-md>
 
   <script>
-    var title = document.querySelector(".bottom");
-    addEventListener('paper-header-transform', function(e) {
-      var d = e.detail;
-      var m = d.height - d.condensedHeight;
-      var scale = Math.max(0.75, (m - d.y) / (m / 0.25) + 0.75);
-      Polymer.Base.transform('scale(' + scale + ') translateZ(0)', title);
-    });
-
-    // Tracking
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)

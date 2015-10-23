@@ -1,6 +1,6 @@
 {
-  "name": "<zero-md> | Ridiculously simple markdown displayer",
-  "short_name": "<zero-md>",
+  "name": "<zero-md> Instantly publish HTML from Markdown",
+  "short_name": "zero-md",
   "icons": [{
         "src": "images/zdx_128x128.png",
         "sizes": "128x128",

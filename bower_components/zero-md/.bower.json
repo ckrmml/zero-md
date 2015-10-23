@@ -1,18 +1,18 @@
 {
   "name": "zero-md",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "authors": [
-    "Jason Lee <zerodevx@gmail.com>"
+    "Jason JC Lee <zerodevx@gmail.com>"
   ],
   "description": "Ridiculously simple markdown displayer - a Polymer 1.1+ component to load and display an external MD file.",
   "keywords": [
     "polymer",
     "web-components",
     "markdown",
+    "html",
+    "converter",
     "marked",
     "prism",
-    "marked-element",
-    "prism-element",
     "ajax"
   ],
   "main": "zero-md.html",
@@ -28,18 +28,16 @@
   ],
   "dependencies": {
     "polymer": "Polymer/polymer#^1.1.0",
-    "iron-ajax": "PolymerElements/iron-ajax#^1.0.0",
     "marked": "~0.3",
     "prism": "~1.0"
   },
-  "_release": "0.1.0",
+  "_release": "0.2.0",
   "_resolution": {
     "type": "version",
-    "tag": "v0.1.0",
-    "commit": "3ae4c54e98119b516c93df36cc960bf93f8e8136"
+    "tag": "v0.2.0",
+    "commit": "92f3578bdcb9f94b6709bf4990cb5b842c802d4c"
   },
   "_source": "git://github.com/zerodevx/zero-md.git",
-  "_target": "^0.1.0",
-  "_originalSource": "zerodevx/zero-md",
-  "_direct": true
+  "_target": "^0.2.0",
+  "_originalSource": "zerodevx/zero-md"
 }
